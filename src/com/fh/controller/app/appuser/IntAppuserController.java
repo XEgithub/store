@@ -24,7 +24,7 @@ import com.fh.util.Tools;
 public class IntAppuserController extends BaseController {
 
 	@Resource(name = "appuserService")
-	private AppuserManager appuserService;
+	private AppuserManager appuserService; 
 
 	/**
 	 * 根据用户名获取会员信息
