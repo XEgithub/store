@@ -1,1 +1,7 @@
+/META-INF
 /com
+/dbconfig.properties
+/dbfh.properties
+/ehcache.xml
+/ftl
+/spring

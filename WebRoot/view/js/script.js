@@ -72,7 +72,7 @@ $(function(){
  //LINKS
  products();
  function products(){
-   var linksWidth = parseInt(($(".wrap").width()-50)/3);
+   var linksWidth = parseInt(($(".wrap").width()-40)/3);  
    $(".products li,.links li").width(linksWidth);
    $(".products li,.links li").each(function(){
     if($(this).index()%3==1){

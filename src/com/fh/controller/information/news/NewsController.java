@@ -27,7 +27,6 @@ import com.fh.service.information.news.NewsManager;
 
 /** 
  * 说明：新闻管理
- * 创建人：FH Q313596790
  * 创建时间：2016-12-14
  */
 @Controller

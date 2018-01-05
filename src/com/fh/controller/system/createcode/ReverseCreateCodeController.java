@@ -124,7 +124,7 @@ public class ReverseCreateCodeController extends BaseController {
 			sb.append(fmap.get("fieldLength").toString()); // 长度
 			sb.append(",fh,");
 			sb.append(fmap.get("fieldSccle").toString()); // 小数点右边的位数
-			sb.append("Q313596790");
+			sb.append("dp");
 		}
 		pd.put("FIELDLIST", sb.toString());
 		mv.addObject("msg", "edit");

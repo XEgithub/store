@@ -127,4 +127,14 @@ public class DictionariesService implements DictionariesManager {
 				pd);
 	}
 
+	public PageData listSubDictByName(PageData pd) throws Exception {
+
+		
+		
+		return    (PageData) dao.findForObject(
+				"DictionariesMapper.listAllDictByName",pd);
+	}
+
+	 
+
 }

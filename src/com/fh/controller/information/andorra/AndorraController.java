@@ -26,6 +26,7 @@ import com.fh.entity.Page;
 import com.fh.service.information.andorra.AndorraService;
 import com.fh.util.Const;
 import com.fh.util.DateUtil;
+import com.fh.util.Jurisdiction;
 import com.fh.util.PageData;
 import com.fh.util.UuidUtil;
 
@@ -70,7 +71,7 @@ public class AndorraController extends BaseController {
 			mv.setViewName("information/andorra/andorra_list");
 			mv.addObject("varList", varList);
 			mv.addObject("pd", pd);
-			mv.addObject(Const.SESSION_QX, this.getHC()); // 按钮权限
+			mv.addObject(Const.SESSION_QX, Jurisdiction.getHC()); // 按钮权限
 		} catch (Exception e) {
 			logger.error(e.toString(), e);
 		}

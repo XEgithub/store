@@ -15,6 +15,7 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 
+import org.hibernate.services.ServicesManager;
 import org.java_websocket.WebSocketImpl;
 
 import com.fh.controller.base.BaseController;
@@ -35,9 +36,10 @@ public class startFilter extends BaseController implements Filter {
 	 * 初始化
 	 */
 	public void init(FilterConfig fc) throws ServletException {
-		this.startWebsocketInstantMsg();
-		this.startWebsocketOnline();
+		//this.startWebsocketInstantMsg();   //注释掉  web  socket  聊天程序
+		//this.startWebsocketOnline();
 		this.reductionDbBackupQuartzState();
+		new ServicesManager();
 	}
 
 	/**

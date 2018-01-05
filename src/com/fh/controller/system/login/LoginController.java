@@ -43,7 +43,6 @@ import com.fh.util.Tools;
 
 /**
  * 总入口
- * @author fh QQ 3 1 3 5 9 6 7 9 0[青苔]
  * 修改日期：2015/11/2
  */
 /**
@@ -73,13 +72,27 @@ public class LoginController extends BaseController {
 	private LogInImgManager loginimgService;
 
 	/**
-	 * 访问登录页
+	 * 访问后台登录页
 	 * 
 	 * @return
 	 * @throws Exception
 	 */
 	@RequestMapping(value = "/login_toLogin")
 	public ModelAndView toLogin() throws Exception {
+		ModelAndView mv = this.getModelAndView();
+		mv.setViewName("website/index");
+		return mv;
+	}
+	
+	
+	/**
+	 * 访问后台登录页
+	 * 
+	 * @return
+	 * @throws Exception
+	 */
+	@RequestMapping(value = "/login_toLoginAdmin")
+	public ModelAndView toLoginAdmin() throws Exception {
 		ModelAndView mv = this.getModelAndView();
 		PageData pd = new PageData();
 		pd = this.getPageData();
@@ -88,6 +101,9 @@ public class LoginController extends BaseController {
 		mv.addObject("pd", pd);
 		return mv;
 	}
+	
+	
+	
 
 	/**
 	 * 请求登录，验证用户

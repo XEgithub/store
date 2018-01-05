@@ -134,6 +134,15 @@
 		where
 			BIANMA = #{BIANMA}
 	</select>
-	
+	<!-- 通过Name获取其子级列表 并且parentid不等于0 -->
+	<select id="listAllDictByName" parameterType="pd" resultType="pd">
+		select 
+		<include refid="Field"></include>
+		from 
+		<include refid="tableName"></include>
+		where 
+			PARENT_ID = #{parentId} AND 
+			NAME = #{NAME}
+	</select>
  
 </mapper>

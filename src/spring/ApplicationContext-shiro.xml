@@ -29,19 +29,29 @@
 			
 			<property name="successUrl" value="/main/index" />
 			
-			<property name="unauthorizedUrl" value="/login_toLogin" />
-			
 			<property name="filterChainDefinitions">
 				<value>
+				/admin.jsp					= anon
+				/5Ye0kVuiws.txt				= anon
+				/website/** 				= anon
+				/static/resource/** 		= anon
 				/static/login/** 			= anon
+				/static/css/** 				= anon
 				/plugins/keypad/** 			= anon
 				/static/js/myjs/** 			= authc
 				/static/js/** 				= anon
 				/uploadFiles/uploadImgs/** 	= anon
 	           	/code.do 					= anon
+	           	/newsData.do 				= anon
+	           	/getshowMenuData.do			= anon
+	           	/goNews.do 					= anon
+	           	/newsShow.do				= anon
+	            /saveMsg.do					= anon
+	            /storelist.do				= anon
 	           	/login_login	 			= anon
 	           	/app**/** 					= anon
 	           	/weixin/** 					= anon
+	           	/uploadFiles/**				= anon
 	           	/**							= authc
 				</value>
 			</property>

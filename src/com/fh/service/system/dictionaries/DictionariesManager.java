@@ -85,5 +85,15 @@ public interface DictionariesManager {
 	 * @throws Exception
 	 */
 	public PageData findFromTbs(PageData pd) throws Exception;
+	
+	/**
+	 * 通过ID获取其子级列表
+	 * 
+	 * @param parentId
+	 * @return
+	 * @throws Exception
+	 */
+	public PageData listSubDictByName(PageData pd)
+			throws Exception;
 
 }

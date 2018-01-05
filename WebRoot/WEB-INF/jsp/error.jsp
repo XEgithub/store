@@ -9,7 +9,7 @@
   <head>
   <meta charset="utf-8" />
   <base href="<%=basePath%>">
-<title>应用程序异常 (500)</title> 
+	<title>系统正在维护中</title> 
 
 <script type="text/javascript" src="static/js/jquery-1.7.2.js"></script>
     <style type="text/css"> 
@@ -28,9 +28,9 @@
  
 <body> 
   <div class="dialog"> 
-    <h1>应用程序异常</h1> 
-    <p>抱歉！您访问的页面出现异常，请稍后重试或联系管理员。</p> 
-    <p><a href="javascript:showErr();">详 情</a> 
+  
+    <p>抱歉！系统正在维护中...          	敬请期待</p> 
+<!--     <p><a href="javascript:showErr();">详 情</a>  -->
 <a href="javascript:history.back(-1)">返 回</a> 
     </p> 
     <div style="display:none;text-align: left;" id="err">${exception }</div>

@@ -12,7 +12,6 @@ import com.fh.service.system.menu.MenuManager;
 import com.fh.util.PageData;
 
 /**
- * 类名称：MenuService 菜单处理 创建人：FH qq 3 1 3 5 9 6 7 9 0[青苔]
  * 
  * @version v2
  */

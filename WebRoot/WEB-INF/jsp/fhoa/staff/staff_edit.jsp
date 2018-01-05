@@ -209,6 +209,7 @@
 				$("#BIANMA").focus();
 			return false;
 			}
+			
 			if($("#DEPARTMENT_ID").val()==""){
 				$("#DEPARTMENT_ID").tips({
 					side:3,
@@ -219,6 +220,7 @@
 				$("#DEPARTMENT_ID").focus();
 			return false;
 			}
+			/* 
 			if($("#FUNCTIONS").val()==""){
 				$("#FUNCTIONS").tips({
 					side:3,
@@ -279,7 +281,7 @@
 				$("#NATION").focus();
 			return false;
 			}
-			if($("#JOBTYPE").val()==""){
+		if($("#JOBTYPE").val()==""){
 				$("#JOBTYPE").tips({
 					side:3,
 		            msg:'请输入岗位类别',
@@ -288,8 +290,8 @@
 		        });
 				$("#JOBTYPE").focus();
 			return false;
-			}
-			if($("#JOBJOINTIME").val()==""){
+			} */
+			/* if($("#JOBJOINTIME").val()==""){
 				$("#JOBJOINTIME").tips({
 					side:3,
 		            msg:'请输入参加工作时间',
@@ -298,8 +300,8 @@
 		        });
 				$("#JOBJOINTIME").focus();
 			return false;
-			}
-			if($("#FADDRESS").val()==""){
+			} */
+			/* if($("#FADDRESS").val()==""){
 				$("#FADDRESS").tips({
 					side:3,
 		            msg:'请输入籍贯',
@@ -308,8 +310,8 @@
 		        });
 				$("#FADDRESS").focus();
 			return false;
-			}
-			if($("#POLITICAL").val()==""){
+			} */
+		/* 	if($("#POLITICAL").val()==""){
 				$("#POLITICAL").tips({
 					side:3,
 		            msg:'请输入政治面貌',
@@ -318,8 +320,8 @@
 		        });
 				$("#POLITICAL").focus();
 			return false;
-			}
-			if($("#PJOINTIME").val()==""){
+			} */
+			/* if($("#PJOINTIME").val()==""){
 				$("#PJOINTIME").tips({
 					side:3,
 		            msg:'请输入入团时间',
@@ -328,8 +330,8 @@
 		        });
 				$("#PJOINTIME").focus();
 			return false;
-			}
-			if($("#SFID").val()==""){
+			} */
+			/* if($("#SFID").val()==""){
 				$("#SFID").tips({
 					side:3,
 		            msg:'请输入身份证号',
@@ -338,8 +340,8 @@
 		        });
 				$("#SFID").focus();
 			return false;
-			}
-			if($("#MARITAL").val()==""){
+			} */
+			/* if($("#MARITAL").val()==""){
 				$("#MARITAL").tips({
 					side:3,
 		            msg:'请输入婚姻状况',
@@ -348,8 +350,8 @@
 		        });
 				$("#MARITAL").focus();
 			return false;
-			}
-			if($("#DJOINTIME").val()==""){
+			} */
+		/* 	if($("#DJOINTIME").val()==""){
 				$("#DJOINTIME").tips({
 					side:3,
 		            msg:'请输入进本单位时间',
@@ -358,8 +360,8 @@
 		        });
 				$("#DJOINTIME").focus();
 			return false;
-			}
-			if($("#POST").val()==""){
+			} */
+			/* if($("#POST").val()==""){
 				$("#POST").tips({
 					side:3,
 		            msg:'请输入现岗位',
@@ -368,8 +370,8 @@
 		        });
 				$("#POST").focus();
 			return false;
-			}
-			if($("#POJOINTIME").val()==""){
+			} */
+		/* 	if($("#POJOINTIME").val()==""){
 				$("#POJOINTIME").tips({
 					side:3,
 		            msg:'请输入上岗时间',
@@ -378,8 +380,8 @@
 		        });
 				$("#POJOINTIME").focus();
 			return false;
-			}
-			if($("#EDUCATION").val()==""){
+			} */
+			/* if($("#EDUCATION").val()==""){
 				$("#EDUCATION").tips({
 					side:3,
 		            msg:'请输入学历',
@@ -388,8 +390,8 @@
 		        });
 				$("#EDUCATION").focus();
 			return false;
-			}
-			if($("#SCHOOL").val()==""){
+			} */
+			/* if($("#SCHOOL").val()==""){
 				$("#SCHOOL").tips({
 					side:3,
 		            msg:'请输入毕业学校',
@@ -398,8 +400,8 @@
 		        });
 				$("#SCHOOL").focus();
 			return false;
-			}
-			if($("#MAJOR").val()==""){
+			} */
+			/* if($("#MAJOR").val()==""){
 				$("#MAJOR").tips({
 					side:3,
 		            msg:'请输入专业',
@@ -408,8 +410,8 @@
 		        });
 				$("#MAJOR").focus();
 			return false;
-			}
-			if($("#FTITLE").val()==""){
+			} */
+		/* 	if($("#FTITLE").val()==""){
 				$("#FTITLE").tips({
 					side:3,
 		            msg:'请输入职称',
@@ -418,8 +420,8 @@
 		        });
 				$("#FTITLE").focus();
 			return false;
-			}
-			if($("#CERTIFICATE").val()==""){
+			} */
+			/* if($("#CERTIFICATE").val()==""){
 				$("#CERTIFICATE").tips({
 					side:3,
 		            msg:'请输入职业资格证',
@@ -428,8 +430,8 @@
 		        });
 				$("#CERTIFICATE").focus();
 			return false;
-			}
-			if($("#CONTRACTLENGTH").val()==""){
+			} */
+		  if($("#CONTRACTLENGTH").val()==""){
 				$("#CONTRACTLENGTH").tips({
 					side:3,
 		            msg:'请输入劳动合同时长',
@@ -438,8 +440,8 @@
 		        });
 				$("#CONTRACTLENGTH").focus();
 			return false;
-			}
-			if($("#CSTARTTIME").val()==""){
+			} 
+		  	if($("#CSTARTTIME").val()==""){
 				$("#CSTARTTIME").tips({
 					side:3,
 		            msg:'请输入签订日期',
@@ -449,6 +451,7 @@
 				$("#CSTARTTIME").focus();
 			return false;
 			}
+		  	/*
 			if($("#CENDTIME").val()==""){
 				$("#CENDTIME").tips({
 					side:3,
@@ -459,6 +462,7 @@
 				$("#CENDTIME").focus();
 			return false;
 			}
+			
 			if($("#ADDRESS").val()==""){
 				$("#ADDRESS").tips({
 					side:3,
@@ -478,7 +482,7 @@
 		        });
 				$("#BZ").focus();
 			return false;
-			}
+			} */
 			$("#Form").submit();
 			$("#zhongxin").hide();
 			$("#zhongxin2").show();

@@ -18,7 +18,6 @@
 <link rel="stylesheet" href="static/login/matrix-login.css" />
 <link href="static/login/font-awesome.css" rel="stylesheet" />
 <script type="text/javascript" src="static/js/jquery-1.5.1.min.js"></script>
-
 </head>
 <body>
 

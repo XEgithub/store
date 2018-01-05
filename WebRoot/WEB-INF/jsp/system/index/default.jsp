@@ -36,10 +36,7 @@
 								</button>
 								<i class="ace-icon fa fa-check green"></i>
 								欢迎使用 信息 化管理平台&nbsp;&nbsp;
-								<strong class="green">
-									&nbsp; 
-									<a href="www.xinsoftware.com" target="_blank"><small>(&nbsp;www.xinsoftware.com&nbsp;)</small></a>
-								</strong>
+								  
 							</div> 
 							
 							

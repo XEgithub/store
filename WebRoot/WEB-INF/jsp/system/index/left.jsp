@@ -5,12 +5,12 @@
 
 				<div class="sidebar-shortcuts" id="sidebar-shortcuts">
 					<div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
-						
+<!-- 						<button class="btn btn-info" onclick="changeMenus();" title="切换菜单"> -->
 						<button class="btn btn-info" onclick="changeMenus();" title="切换菜单">
 							<i class="ace-icon fa fa-pencil"></i>
 						</button>
-						
-						<button class="btn btn-success" title="UI实例" onclick="window.open('static/html_UI/html');">
+<!-- 						<button class="btn btn-success" title="UI实例" onclick="window.open('static/html_UI/html');"> -->
+						<button class="btn btn-success" title="" >
 							<i class="ace-icon fa fa-signal"></i>
 						</button>
 
