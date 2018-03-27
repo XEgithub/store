@@ -3,7 +3,7 @@
  */
 	$(document).ready(function (e) {
 		
-		
+/*		
 		var navigatinStr=""; 
 		$.ajax({
 			type: "POST",
@@ -35,8 +35,35 @@
 				   
 				  // $("#logo").append(navigatinStr+subMenuStr	);
 				
-			}
+			} 
 			
+		});*/
+		
+		$.ajax({
+			type: "POST",
+			url:$.ctx +'getshowMenuData.do?tm='+new Date().getTime(),
+			dataType:'json',
+			success: function(data){
+				
+				var str="";
+				var wid=790;
+				for(var i=0;i<data.length;i++){
+					k=i+1;
+					str+="<li><a id=\"aid"+k+"\" class=\"subpage\" onmousemove=\"moveMenu('aid"+k+"','xiala"+k+"','menuxiala"+k+"');\" " +
+							" onmouseout=\"outMenu('xiala"+k+"');\" href=\"\"  >"+data[i].NAME+"</a></li>";
+				  var sublist=data[i].subDict;
+				  var subTitle=""; 
+				  var subDIV="<div class=\"menuxiala\" id=\"menuxiala"+k+"\" style=\"width: "+wid+"px;\" onmouseout=\"suboutMenu('menuxiala"+k+"');\">"+
+						"<span id=\"xiala"+k+"\" style=\"padding-left:14px;\" onmousemove=\"submoveMenu('aid"+k+"','menuxiala"+k+"')\" >";
+					 
+				  for(var j=0;j<sublist.length;j++){
+					  subTitle+="<a onclick=\"openPage('"+$.ctx+"newsData.do?CATALOG_NAME="+data[i].NAME+"&amp;SUBDIRECTORY_NAME="+sublist[j].NAME+"&amp;SUNCATALOGUE_NAME=')\">"+sublist[j].NAME+"</a>&nbsp;&nbsp; &nbsp;   ";
+				  }
+				  wid=wid-96;
+				  $("#logo").append(subDIV+subTitle+"</span></div>"); 
+				}
+				$(".navigationlist").append(str);
+			}
 		});
 		
 		var $li = $('#tab li');

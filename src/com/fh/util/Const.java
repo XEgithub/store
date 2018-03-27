@@ -38,11 +38,11 @@ public class Const {
 	public static final String NO_INTERCEPTOR_PATH = ".*/((login)|(logout)|(code)|(app)|(weixin)|(newsData)"
 			+ "|(getshowMenuData)|(newsShow)|(goNews)|"
 			+ "(saveMsg)|(storelist)|(uploadFiles)|(static)"
-			+"|(5Ye0kVuiws.txt)"
+			+"|(5Ye0kVuiws.txt)|(qa4dpgkXI5.txt)|(rGPnwa205w.txt)"  
 			+ "|(main)|(websocket)).*"; // 不对匹配该值的访问路径拦截（正则）
 	public static ApplicationContext WEB_APP_CONTEXT = null; // 该值会在web容器启动时由WebAppContextListener初始化
 
-	/**
+	/** 
 	 * APP Constants
 	 */
 	// 系统用户注册接口_请求协议参数)
@@ -55,4 +55,4 @@ public class Const {
 	public static final String[] APP_GETAPPUSER_PARAM_ARRAY = new String[] { "USERNAME" };
 	public static final String[] APP_GETAPPUSER_VALUE_ARRAY = new String[] { "用户名" };
 
-}
+}  

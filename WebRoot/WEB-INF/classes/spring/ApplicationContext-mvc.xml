@@ -18,6 +18,8 @@
 	<mvc:resources mapping="/static/**" location="/,/static/" />
 	<mvc:resources mapping="/plugins/**" location="/,/plugins/" />
 	<mvc:resources mapping="/uploadFiles/**" location="/,/uploadFiles/" /> 
+	<mvc:resources mapping="/*.txt" location="/,/static/" cache-period="31556926" /> 
+	
 
 	<!-- 访问拦截  -->  
   	<mvc:interceptors>

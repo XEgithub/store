@@ -1,12 +1,17 @@
 package com.fh.interceptor;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
+import sun.util.logging.resources.logging;
+
 import com.fh.entity.system.User;
+import com.fh.service.system.fhlog.FHlogManager;
 import com.fh.util.Const;
+import com.fh.util.DateUtil;
 import com.fh.util.Jurisdiction;
 
 /**
@@ -15,10 +20,13 @@ import com.fh.util.Jurisdiction;
  */
 public class LoginHandlerInterceptor extends HandlerInterceptorAdapter {
 
+	@Resource(name = "fhlogService")
+	private FHlogManager FHLOG;
 	@Override
 	public boolean preHandle(HttpServletRequest request,
 			HttpServletResponse response, Object handler) throws Exception {
 		String path = request.getServletPath();
+		
 		if (path.matches(Const.NO_INTERCEPTOR_PATH)) {
 			return true;
 		} else {
@@ -34,6 +42,7 @@ public class LoginHandlerInterceptor extends HandlerInterceptorAdapter {
 				return b;
 			} else {
 				// 登陆过滤
+				FHLOG.save("访问"+DateUtil.getCurrentDateTime() ,path);
 				response.sendRedirect(request.getContextPath() + Const.LOGIN);
 				return false;
 			}

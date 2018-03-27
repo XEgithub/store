@@ -32,6 +32,7 @@
 			<property name="filterChainDefinitions">
 				<value>
 				/admin.jsp					= anon
+				/qa4dpgkXI5.txt				= anon
 				/5Ye0kVuiws.txt				= anon
 				/website/** 				= anon
 				/static/resource/** 		= anon
