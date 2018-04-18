@@ -1,6 +1,7 @@
 package com.fh.service.website.graphic;
 
 import java.util.List;
+
 import com.fh.entity.Page;
 import com.fh.util.PageData;
 
@@ -56,6 +57,8 @@ public interface GraphicManager{
 	public List<PageData> findByTypes(PageData pd)throws Exception;
 	
 	public List<PageData> findByPage(Page page)throws Exception;
+	
+	public List<PageData> listAll(Page page)throws Exception;
 	
 	
 }

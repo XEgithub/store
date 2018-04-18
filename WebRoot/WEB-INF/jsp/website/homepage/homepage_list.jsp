@@ -69,15 +69,9 @@
 									<th class="center" style="width:50px;">序号</th>
 									<th class="center">主题名称</th>
 									<th class="center">主题内容</th>
-									<th class="center">模块1名称</th>
-									<th class="center">模块一内容</th>
-									<th class="center">模块2名称</th>
-									<th class="center">模块2内容</th>
-									<th class="center">模块3名称</th>
-									<th class="center">模块3内容</th>
-									<th class="center">模块4名称</th>
-									<th class="center">模块4内容</th>
-									<th class="center">操作</th>
+									<th class="center">模块名称</th>
+									<th class="center">模块内容</th>
+									<th class="center">模块类型</th> 							 
 								</tr>
 							</thead>
 													
@@ -95,58 +89,11 @@
 											<td class='center'>${var.THEME}</td>
 											<td class='center'>${var.THEMECONTENT}</td>
 											<td class='center'>${var.MODULAR1NAME}</td>
-											<td class='center'>${var.MODULAR1CONTENT}</td>
-											<td class='center'>${var.MODULAR2NAME}</td>
-											<td class='center'>${var.MODULAR2CONTENT}</td>
-											<td class='center'>${var.MODULAR3NAME}</td>
-											<td class='center'>${var.MODULAR3CONTENT}</td>
-											<td class='center'>${var.MODULAR4NAME}</td>
-											<td class='center'>${var.MODULAR4CONTENT}</td>
-											<td class="center">
-												<c:if test="${QX.edit != 1 && QX.del != 1 }">
-												<span class="label label-large label-grey arrowed-in-right arrowed-in"><i class="ace-icon fa fa-lock" title="无权限"></i></span>
-												</c:if>
-												<div class="hidden-sm hidden-xs btn-group">
-													<c:if test="${QX.edit == 1 }">
-													<a class="btn btn-xs btn-success" title="编辑" onclick="edit('${var.HOMEPAGE_ID}');">
-														<i class="ace-icon fa fa-pencil-square-o bigger-120" title="编辑"></i>
-													</a>
-													</c:if>
-													<c:if test="${QX.del == 1 }">
-													<a class="btn btn-xs btn-danger" onclick="del('${var.HOMEPAGE_ID}');">
-														<i class="ace-icon fa fa-trash-o bigger-120" title="删除"></i>
-													</a>
-													</c:if>
-												</div>
-												<div class="hidden-md hidden-lg">
-													<div class="inline pos-rel">
-														<button class="btn btn-minier btn-primary dropdown-toggle" data-toggle="dropdown" data-position="auto">
-															<i class="ace-icon fa fa-cog icon-only bigger-110"></i>
-														</button>
-			
-														<ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
-															<c:if test="${QX.edit == 1 }">
-															<li>
-																<a style="cursor:pointer;" onclick="edit('${var.HOMEPAGE_ID}');" class="tooltip-success" data-rel="tooltip" title="修改">
-																	<span class="green">
-																		<i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
-																	</span>
-																</a>
-															</li>
-															</c:if>
-															<c:if test="${QX.del == 1 }">
-															<li>
-																<a style="cursor:pointer;" onclick="del('${var.HOMEPAGE_ID}');" class="tooltip-error" data-rel="tooltip" title="删除">
-																	<span class="red">
-																		<i class="ace-icon fa fa-trash-o bigger-120"></i>
-																	</span>
-																</a>
-															</li>
-															</c:if>
-														</ul>
-													</div>
-												</div>
-											</td>
+											<td class='center'>
+												<img id="img1" alt="${var.MODULAR1CONTENT}" src="${var.MODULAR1CONTENT}" width="120" height="100" style="border:  3px solid red; " >
+											</td> 
+									 		<td class='center'>${var.TYPES}</td>
+									 
 										</tr>
 									
 									</c:forEach>
@@ -170,11 +117,14 @@
 							<tr>
 								<td style="vertical-align:top;">
 									<c:if test="${QX.add == 1 }">
-									<a class="btn btn-mini btn-success" onclick="add();">新增</a>
-									</c:if>
+									<a class="btn btn-xs btn-success" onclick="add();">
+										<i class="ace-icon fa fa-pencil-square-o bigger-120" title="编辑"></i>新增</a>
+									</c:if>   
 									<c:if test="${QX.del == 1 }">
-									<a class="btn btn-mini btn-danger" onclick="makeAll('确定要删除选中的数据吗?');" title="批量删除" ><i class='ace-icon fa fa-trash-o bigger-120'></i></a>
+									<a class="btn btn-mini btn-danger" onclick="makeAll('确定要删除选中的数据吗?');" title="批量删除" >
+									<i class='ace-icon fa fa-trash-o bigger-120'></i>批量删除</a>
 									</c:if>
+								 
 								</td>
 								<td style="vertical-align:top;"><div class="pagination" style="float: right;padding-top: 0px;margin-top: 0px;">${page.pageStr}</div></td>
 							</tr>
@@ -274,8 +224,8 @@
 			 diag.Drag=true;
 			 diag.Title ="新增";
 			 diag.URL = '<%=basePath%>homepage/goAdd.do';
-			 diag.Width = 850;
-			 diag.Height = 555;
+			 diag.Width = 950;
+			 diag.Height = 655;
 			 diag.Modal = true;				//有无遮罩窗口
 			 diag. ShowMaxButton = true;	//最大化按钮
 		     diag.ShowMinButton = true;		//最小化按钮
@@ -313,8 +263,8 @@
 			 diag.Drag=true;
 			 diag.Title ="编辑";
 			 diag.URL = '<%=basePath%>homepage/goEdit.do?HOMEPAGE_ID='+Id;
-			 diag.Width = 450;
-			 diag.Height = 355;
+			 diag.Width = 950;
+			 diag.Height = 655;
 			 diag.Modal = true;				//有无遮罩窗口
 			 diag. ShowMaxButton = true;	//最大化按钮
 		     diag.ShowMinButton = true;		//最小化按钮 

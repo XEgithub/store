@@ -1,2 +1,10 @@
-/com
 /mybatis1
+/META-INF
+/com
+/dbconfig.properties
+/dbfh.properties
+/ehcache.xml
+/ftl
+/information
+/log4j.properties
+/log4j.xml

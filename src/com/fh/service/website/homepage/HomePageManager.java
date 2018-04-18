@@ -1,13 +1,15 @@
 package com.fh.service.website.homepage;
 
 import java.util.List;
+
 import com.fh.entity.Page;
+import com.fh.entity.homepage.HomePage;
 import com.fh.util.PageData;
 
 /** 
  * 说明： 首页设置接口
  * 创建人：FH Q313596790
- * 创建时间：2018-03-27
+ * 创建时间：2018-04-02
  * @version
  */
 public interface HomePageManager{
@@ -53,6 +55,12 @@ public interface HomePageManager{
 	 * @throws Exception
 	 */
 	public void deleteAll(String[] ArrayDATA_IDS)throws Exception;
+
+	/**
+	 * 查询所有
+	 * @return
+	 */
+	public List<HomePage> listHomePage(PageData pd)throws Exception;
 	
 }
 

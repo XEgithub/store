@@ -13,12 +13,7 @@
 		THEMECONTENT,	
 		MODULAR1NAME,	
 		MODULAR1CONTENT,	
-		MODULAR2NAME,	
-		MODULAR2CONTENT,	
-		MODULAR3NAME,	
-		MODULAR3CONTENT,	
-		MODULAR4NAME,	
-		MODULAR4CONTENT,	
+		TYPES,	
 		HOMEPAGE_ID
 	</sql>
 	
@@ -28,12 +23,7 @@
 		#{THEMECONTENT},	
 		#{MODULAR1NAME},	
 		#{MODULAR1CONTENT},	
-		#{MODULAR2NAME},	
-		#{MODULAR2CONTENT},	
-		#{MODULAR3NAME},	
-		#{MODULAR3CONTENT},	
-		#{MODULAR4NAME},	
-		#{MODULAR4CONTENT},	
+		#{TYPES},	
 		#{HOMEPAGE_ID}
 	</sql>
 	
@@ -65,12 +55,7 @@
 			THEMECONTENT = #{THEMECONTENT},
 			MODULAR1NAME = #{MODULAR1NAME},
 			MODULAR1CONTENT = #{MODULAR1CONTENT},
-			MODULAR2NAME = #{MODULAR2NAME},
-			MODULAR2CONTENT = #{MODULAR2CONTENT},
-			MODULAR3NAME = #{MODULAR3NAME},
-			MODULAR3CONTENT = #{MODULAR3CONTENT},
-			MODULAR4NAME = #{MODULAR4NAME},
-			MODULAR4CONTENT = #{MODULAR4CONTENT},
+			TYPES = #{TYPES},
 		HOMEPAGE_ID = HOMEPAGE_ID
 		where 
 		HOMEPAGE_ID = #{HOMEPAGE_ID}
@@ -111,8 +96,17 @@
 		<include refid="Field"></include>
 		from 
 		<include refid="tableName"></include>
+		
+		order by   MODULAR1NAME  desc
 	</select>
-	
+	<select id="listHomePage" parameterType="pd" resultType="pd">
+		select
+		<include refid="Field"></include>
+		from 
+		<include refid="tableName"></include>
+		
+		order by   MODULAR1NAME  desc
+	</select>
 	<!-- 批量删除 -->
 	<delete id="deleteAll" parameterType="String">
 		delete from

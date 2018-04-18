@@ -105,9 +105,6 @@
 		from 
 		<include refid="tableName"></include>
 		where 1=1
-		 <if test="pd.keywords!= null and pd.keywords != ''"><!-- 关键词检索 -->
-		  and
-		 </if>
 		 <if test="pd.CATALOG_NAME!= null and pd.CATALOG_NAME != ''">
 			and  CATALOG_NAME = #{pd.CATALOG_NAME}   
 		 </if>
@@ -137,6 +134,30 @@
 		<include refid="Field"></include>
 		from 
 		<include refid="tableName"></include>
+		
+		where 1=1
+		 <if test="pd!= null">
+		 <if test="pd.CATALOG_NAME!= null and pd.CATALOG_NAME != ''">
+			and  CATALOG_NAME = #{pd.CATALOG_NAME}   
+		 </if>
+		<if test="pd.SUBDIRECTORY_NAME!= null and pd.SUBDIRECTORY_NAME != ''">
+			and  SUBDIRECTORY_NAME = #{pd.SUBDIRECTORY_NAME}   
+		 </if>
+		 <if test="pd.SUNCATALOGUE_NAME!= null and pd.SUNCATALOGUE_NAME != ''">
+			and  SUNCATALOGUE_NAME = #{pd.SUNCATALOGUE_NAME}   
+		 </if>
+		  <if test="pd.SHOWSTATUS!= null and pd.SHOWSTATUS != ''">
+			and  SHOWSTATUS = #{pd.SHOWSTATUS}    
+		 </if>	
+		 <if test="pd.INPUTDATE!= null and pd.INPUTDATE != ''">
+			and  INPUTDATE = #{pd.INPUTDATE}    
+		 </if>
+		   <if test="pd.NAME!= null and pd.NAME!= ''">
+			and  NAME = #{pd.NAME}    
+		 </if>		
+			and  SHOWSTATUS = 1  	
+			 order by INPUTDATE desc
+			</if>
 	</select>
 	
 	<!-- 批量删除 -->

@@ -3,73 +3,67 @@
  */
 	$(document).ready(function (e) {
 		
-/*		
-		var navigatinStr=""; 
 		$.ajax({
 			type: "POST",
 			url:$.ctx +'getshowMenuData.do?tm='+new Date().getTime(),
 			dataType:'json',
-			success: function(data){
-				var subMenuStr="";
-				var navigatinStr='<div id="navigation"><ul class="navigationlist">';
-				    navigatinStr+='<li><a id="showpageid" class="headpage" href="'+$.ctx+'"  onmousemove="moveMenu(\'aid0\',\'xiala1\',\'menuxiala1\');" >首页</a></li>';
-				 var initWidth=790;
-				   for (var i = 0; i < data.length; i++) {
-					  var menu=data[i];
-					  if(menu.NAME!="在线视频"&&menu.NAME!="行业动态"){ 
-						  navigatinStr+='<li><a id="aid'+(i+1)+'" class="subpage" onmousemove="moveMenu(\'aid'+(i+1)+'\',\'xiala'+(i+1)+'\',\'menuxiala'+(i+1)+'\');"  onmouseout="outMenu(\'xiala'+i+'\');" href=""  >'+menu.NAME+'</a></li>';
-						  var subMenuArr=menu.subDict;
-						  subMenuStr+='<div class="menuxiala" id="menuxiala'+(i+1)+'" style="width:'+initWidth+'px;" onmouseout="suboutMenu(\'menuxiala'+(i+1)+'\');">';
-						  subMenuStr+='<span id="xiala'+j+'" style="padding-left:14px;" onmousemove="submoveMenu(\'aid'+i+'\',\'menuxiala'+i+'\')" >';
-						  for (var j = 0; j < subMenuArr.length; j++) {
-							  var subMenu=subMenuArr[j];
-							  subMenuStr+='<a onclick="openPage(\''+$.ctx+'newsData.do?CATALOG_NAME='+menu.NAME+'&amp;SUBDIRECTORY_NAME='+subMenu.NAME+'&amp;SUNCATALOGUE_NAME=\')">'+subMenu.NAME+'</a>&nbsp;&nbsp; &nbsp;';
-						  }
-						  subMenuStr+="</span></div>"; 
-						  initWidth-=96;  
-						  
-					  }
-				  }  
-				   navigatinStr+="</ul></div>";
-				   console.info(navigatinStr+subMenuStr); 
-				   
-				  // $("#logo").append(navigatinStr+subMenuStr	);
-				
-			} 
-			
-		});*/
-		
-		$.ajax({
-			type: "POST",
-			url:$.ctx +'getshowMenuData.do?tm='+new Date().getTime(),
-			dataType:'json',
-			success: function(data){
-				
+			success: function(res){
+				var data=res["dictionList"];
 				var str="";
 				var wid=790;
 				for(var i=0;i<data.length;i++){
 					k=i+1;
 					str+="<li><a id=\"aid"+k+"\" class=\"subpage\" onmousemove=\"moveMenu('aid"+k+"','xiala"+k+"','menuxiala"+k+"');\" " +
-							" onmouseout=\"outMenu('xiala"+k+"');\" href=\"\"  >"+data[i].NAME+"</a></li>";
+							" onmouseout=\"outMenu('xiala"+k+"');\" href=\"\"  >"+data[i].name+"</a></li>";
 				  var sublist=data[i].subDict;
 				  var subTitle=""; 
 				  var subDIV="<div class=\"menuxiala\" id=\"menuxiala"+k+"\" style=\"width: "+wid+"px;\" onmouseout=\"suboutMenu('menuxiala"+k+"');\">"+
 						"<span id=\"xiala"+k+"\" style=\"padding-left:14px;\" onmousemove=\"submoveMenu('aid"+k+"','menuxiala"+k+"')\" >";
 					 
 				  for(var j=0;j<sublist.length;j++){
-					  subTitle+="<a onclick=\"openPage('"+$.ctx+"newsData.do?CATALOG_NAME="+data[i].NAME+"&amp;SUBDIRECTORY_NAME="+sublist[j].NAME+"&amp;SUNCATALOGUE_NAME=')\">"+sublist[j].NAME+"</a>&nbsp;&nbsp; &nbsp;   ";
+					 
+					  subTitle+="<a onclick=\"openPage('"+$.ctx+"newsData.do?CATALOG_NAME="+data[i].name+"&amp;SUBDIRECTORY_NAME="+sublist[j].name+"&amp;SUNCATALOGUE_NAME=')\">"+sublist[j].name+"</a>&nbsp;&nbsp; &nbsp;   ";
 				  }
 				  wid=wid-96;
 				  $("#logo").append(subDIV+subTitle+"</span></div>"); 
 				}
 				$(".navigationlist").append(str);
+				
+				var homepages=res["homepgeList"];
+				
+				var aboutData=res["aboutList"];
+			 
+			//	initAboutUS(aboutData);
+				var bottomImgList=[];
+				var headimgStr="";
+				for(var i=0;i<homepages.length;i++){  
+					
+					var title=homepages[i].MODULAR1NAME;
+					var width=$(window).width();
+					var str='<li><a href="javascript:void(0)" ><img src="'+$.ctx+homepages[i].MODULAR1CONTENT+'"  style="width:100%;height:450px;"  /></a></li>';
+				
+					if(title=="首页轮播图"){  
+						headimgStr+=str;
+					}
+					if(title=="关于远元"){
+						
+						$("#aboutimgId").attr("src",$.ctx+homepages[i].MODULAR1CONTENT);
+					} 
+					if(title=="首页底部轮播图"){
+						bottomImgList.push($.ctx+homepages[i].MODULAR1CONTENT);
+					}
+				}
+				 initBottomImg(bottomImgList);
+			 
+				$("#headulid").append(headimgStr);
+				slideImage();
 			}
 		});
 		
 		var $li = $('#tab li');
 		var $ul = $('#content ul');
 		//新闻资讯直接加载
-		getWebSiteData("newsimgid","newstitleid","newsbriefid","新闻中心","新闻中心","",2);		
+		getWebSiteData("newsimgid","newstitleid","newsbriefid","","新闻中心","",2);		
 		$li.mouseover(function(){
 		 
 			var $this = $(this);
@@ -78,22 +72,101 @@
 			$this.addClass('current');
 			$ul.css('display','none');
 			$ul.eq($t).css('display','block');
-			//行业动态
+			//市场动态
 			if($t==1){ 
-				getWebSiteData("media_img_id","media_title_id","media_brief_id","行业动态","","",2);
+				getWebSiteData("media_img_id","media_title_id","media_brief_id","新闻中心","市场动态","",2);
 			}
 			// 店面分布 
 			if($t==2){ 
 				 
 			}
 			if($t==3){ 
-				getWebSiteData("","onlineVideo","","新闻中心","聚焦媒体","",6);	   
+				getWebSiteData("","onlineVideo","","新闻中心","媒体聚焦","",6);	   
 			}
 			
 		});	
 		
 	});
 	
+	function initBottomImg(bottomImgList){
+		var str="";
+		for(var i=0;i<bottomImgList.length;i++){
+			if(i%2==0){
+				str+='<li><a href="#"  target="_blank">'
+					+'<img class="imgtitle" src="'+bottomImgList[i]+'" width="250" height="180" /></a>';
+			}else{
+				str+='<div class="centerImg" >'
+				+'<img  class="shake" src="'+bottomImgList[i]+'" width="90" height="90">'
+	 	 		+'</div></li>';
+			}
+		}
+		
+		$("#bottomImgUIID").append(str); 
+		animationImg(); 
+		 
+	}
+	
+	function animationImg(){
+		 $('.vmcarousel-centered-infitine').vmcarousel({
+			 centered: true,
+			 start_item: 1,
+			 autoplay: true,
+			 infinite: true
+		  });   
+		
+	}
+	
+	function initAboutUS(aboutData){
+	
+		for(var i=0;i<aboutData.length;i++){  
+			var name=aboutData[i].SUBDIRECTORY_NAME;
+			if(name=="集团简介"){
+				var content=aboutData[i].CONTENT;
+				var newcontent=content.substring(0,1950);
+				$("#aboutUSContentID").append(newcontent);
+			}
+		}
+	}
+	
+	/**
+	 * 首页轮播图
+	 */
+	function slideImage(){
+		
+		if ($(".bannerlist li").length > 0) {
+			 $('#banner_main').slide({
+					titCell: '.hd ul',
+					mainCell: '#banner ul',
+					autoPlay: true,
+					autoPage: true,
+					delayTime: 500,
+					effect: 'left',
+					prevCell:'#bgnextid',
+					nextCell:'#bgfrontid',
+					trigger:"click"
+				}); 
+				$(window).resize(function () {
+					CenterBanner();
+				});
+				 
+					CenterBanner();
+				 
+			} else {
+			 
+				$("#banner_main").hide();
+			}
+		
+		function CenterBanner() {
+			var imgWidth = parseInt($(".bannerlist li img:first").width());
+			if (imgWidth <= 0)
+				return;
+			var winWidth = parseInt($(window).width());
+			var offset = parseInt((winWidth - imgWidth) / 2);
+		 
+		} 
+		
+		
+	}
 	
 	function getWebSiteData(imgid,titleid,briefid,CATALOG_NAME,SUBDIRECTORY_NAME,SUNCATALOGUE_NAME,number){
 		$.ajax({
@@ -106,7 +179,7 @@
 	    	},
 			dataType:'json',
 			success: function(data){
-
+			 
 				if(number<data.length){
 					number=data.length; 
 				}
@@ -195,8 +268,13 @@
         }
         return false; //阻止a标签继续执行
     }
- 
-     function moveMenu(aid,divid,menuxialaid){
+    /**
+     * 
+     * @param aid
+     * @param divid
+     * @param menuxialaid
+     */
+    function moveMenu(aid,divid,menuxialaid){
     	
     	 if(aid=="aid0"){
     		 $(".navigationlist a").css({
@@ -243,6 +321,11 @@
     	// $(".menuxiala").hide();
      }
  
+     /**
+      * 
+      * @param aid
+      * @param subid
+      */
      function submoveMenu(aid,subid){
     
     	 
@@ -256,7 +339,6 @@
     		 "color":"#ffffff"
     	 });
     	 $("#"+subid).show();  
-    	
     	
      }
      

@@ -1,17 +1,20 @@
 package com.fh.service.website.homepage.impl;
 
 import java.util.List;
+
 import javax.annotation.Resource;
+
 import org.springframework.stereotype.Service;
+
 import com.fh.dao.DaoSupport;
 import com.fh.entity.Page;
+import com.fh.entity.homepage.HomePage;
 import com.fh.util.PageData;
 import com.fh.service.website.homepage.HomePageManager;
 
 /** 
  * 说明： 首页设置
- * 创建人：FH Q313596790
- * 创建时间：2018-03-27
+ * 创建时间：2018-04-02
  * @version
  */
 @Service("homepageService")
@@ -76,6 +79,12 @@ public class HomePageService implements HomePageManager{
 	 */
 	public void deleteAll(String[] ArrayDATA_IDS)throws Exception{
 		dao.delete("HomePageMapper.deleteAll", ArrayDATA_IDS);
+	}
+
+	@Override
+	public List<HomePage> listHomePage(PageData pd) throws Exception {
+		 
+		return (List<HomePage>)dao.findForList("HomePageMapper.listHomePage",pd);
 	}
 	
 }

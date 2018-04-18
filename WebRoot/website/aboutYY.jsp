@@ -264,64 +264,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div id="navigation">
 				<ul class="navigationlist">
 					<li><a id="showpageid" class="headpage" href="<%=basePath %>"  onmousemove="moveMenu('aid0','xiala1','menuxiala1');" >首页</a></li>
-					<li><a id="aid1" class="subpage" onmousemove="moveMenu('aid1','xiala1','menuxiala1');" onmouseout="outMenu('xiala1');" href=""  >关于远元</a></li>
-					<li><a id="aid2"  class="subpage" onmousemove="moveMenu('aid2','xiala2','menuxiala2');" onmouseout="outMenu('xiala2');" href=""  >远元产业</a></li>
-					<li><a id="aid3"  class="subpage" onmousemove="moveMenu('aid3','xiala3','menuxiala3');" onmouseout="outMenu('xiala3');" href=""  >新闻中心</a></li>
-					<li><a id="aid4" class="subpage"  onmousemove="moveMenu('aid4','xiala4','menuxiala4');" onmouseout="outMenu('xiala4');" href=""  >远元文化</a></li>
-					<li><a id="aid5"  class="subpage" onmousemove="moveMenu('aid5','xiala5','menuxiala5');" onmouseout="outMenu('xiala5');" href="" >远元基金会</a></li>
-					<li><a id="aid6"  class="subpage" onmousemove="moveMenu('aid6','xiala6','menuxiala6');" onmouseout="outMenu('xiala6');" href=""  >联系我们</a></li>
 				</ul>
 			</div>
-			<div class="menuxiala" id="menuxiala1" style="width: 760px;" onmouseout="suboutMenu('menuxiala1');">
-					<span id="xiala1" style="padding-left:14px;" onmousemove="submoveMenu('aid1','menuxiala1')" >
-						<a onclick="openPage('<%=basePath %>newsData.do?CATALOG_NAME=关于远元&amp;SUBDIRECTORY_NAME=集团简介&amp;SUNCATALOGUE_NAME=')">集团简介</a>&nbsp;&nbsp; &nbsp;   
-						<a onclick="openPage('<%=basePath %>newsData.do?CATALOG_NAME=关于远元&amp;SUBDIRECTORY_NAME=董事长&amp;SUNCATALOGUE_NAME=')">董事长</a>&nbsp; &nbsp; &nbsp; 
-						<a onclick="openPage('<%=basePath %>newsData.do?CATALOG_NAME=关于远元&amp;SUBDIRECTORY_NAME=管理团队&amp;SUNCATALOGUE_NAME=')">管理团队</a>&nbsp; &nbsp; &nbsp; 
-						<a onclick="openPage('<%=basePath %>newsData.do?CATALOG_NAME=关于远元&amp;SUBDIRECTORY_NAME=组织结构&amp;SUNCATALOGUE_NAME=')">组织结构</a>&nbsp; &nbsp; &nbsp; 
-						<a onclick="openPage('<%=basePath %>newsData.do?CATALOG_NAME=关于远元&amp;SUBDIRECTORY_NAME=企业大事记&amp;SUNCATALOGUE_NAME=')">企业大事记</a>&nbsp;&nbsp; &nbsp; 
-						<a onclick="openPage('<%=basePath %>newsData.do?CATALOG_NAME=关于远元&amp;SUBDIRECTORY_NAME=集团荣誉&amp;SUNCATALOGUE_NAME=')">集团荣誉</a>&nbsp; &nbsp; &nbsp; 
-					</span>
-		     </div>
-		     <div class="menuxiala" id="menuxiala2" style="width: 664px;"  onmouseout="suboutMenu('menuxiala2');">
-					<span id="xiala2" style="padding-left:14px;" onmousemove="submoveMenu('aid2','menuxiala2')" >
-						<a onclick="openPage('<%=basePath %>newsData.do?CATALOG_NAME=远元产业&amp;SUBDIRECTORY_NAME=生物制药&amp;SUNCATALOGUE_NAME=药厂简介')">生物制药</a>&nbsp; &nbsp; &nbsp; 
-						<a onclick="openPage('<%=basePath %>newsData.do?CATALOG_NAME=远元产业&amp;SUBDIRECTORY_NAME=培训学校&amp;SUNCATALOGUE_NAME=')">培训学校</a>&nbsp;&nbsp; &nbsp; 
-						<a onclick="openPage('<%=basePath %>newsData.do?CATALOG_NAME=远元产业&amp;SUBDIRECTORY_NAME=远元传媒&amp;SUNCATALOGUE_NAME=')">远元传媒</a>&nbsp;&nbsp; &nbsp; 
-						<a onclick="openPage('<%=basePath %>newsData.do?CATALOG_NAME=远元产业&amp;SUBDIRECTORY_NAME=足部护理&amp;SUNCATALOGUE_NAME=')">足部护理</a>&nbsp; &nbsp; &nbsp; 
-						<a onclick="openPage('<%=basePath %>newsData.do?CATALOG_NAME=远元产业&amp;SUBDIRECTORY_NAME=商学院&amp;SUNCATALOGUE_NAME=')">商学院</a>&nbsp;&nbsp; &nbsp; 
-						
-					</span>
-			  </div>
-			  <div class="menuxiala" id="menuxiala3" style="width: 568px;"  onmouseout="suboutMenu('menuxiala3');">
-					<span id="xiala3" style="padding-left:14px;" onmousemove="submoveMenu('aid3','menuxiala3')">
-					    <a onclick="openPage('<%=basePath %>newsData.do?CATALOG_NAME=新闻中心&amp;SUBDIRECTORY_NAME=新闻中心&amp;SUNCATALOGUE_NAME=')">新闻中心</a>&nbsp; &nbsp; &nbsp; 
-						<a onclick="openPage('<%=basePath %>newsData.do?CATALOG_NAME=新闻中心&amp;SUBDIRECTORY_NAME=聚焦媒体&amp;SUNCATALOGUE_NAME=')">聚焦媒体</a>&nbsp; &nbsp; &nbsp; 
-					</span>
-			  </div>
-			  <div class="menuxiala" id="menuxiala4" style="width: 472px;"  onmouseout="suboutMenu('menuxiala4');">		
-				
-					<span id="xiala4" style="padding-left:14px;" onmousemove="submoveMenu('aid4','menuxiala4')">
-						<a onclick="openPage('<%=basePath %>newsData.do?CATALOG_NAME=远元文化&amp;SUBDIRECTORY_NAME=远元文化&amp;SUNCATALOGUE_NAME=')">远元文化</a>&nbsp; &nbsp; &nbsp; 
-						<a onclick="openPage('<%=basePath %>newsData.do?CATALOG_NAME=远元文化&amp;SUBDIRECTORY_NAME=员工风采&amp;SUNCATALOGUE_NAME=')">员工风采</a>&nbsp; &nbsp; &nbsp; 
-						<a onclick="openPage('<%=basePath %>newsData.do?CATALOG_NAME=远元文化&amp;SUBDIRECTORY_NAME=培训服务&amp;SUNCATALOGUE_NAME=')">培训服务</a>&nbsp; &nbsp; &nbsp; 
-						<a onclick="openPage('<%=basePath %>newsData.do?CATALOG_NAME=远元文化&amp;SUBDIRECTORY_NAME=公益活动&amp;SUNCATALOGUE_NAME=')">公益活动</a>&nbsp;&nbsp; &nbsp; 
-					</span>
-			  </div>
-			   <div class="menuxiala" id="menuxiala5" style="width: 376px;"  onmouseout="suboutMenu('menuxiala5');">		
-				
-					<span id="xiala5" style="padding-left:14px;" onmousemove="submoveMenu('aid5','menuxiala5')">
-						<a onclick="openPage('<%=basePath %>newsData.do?CATALOG_NAME=远元基金会&amp;SUBDIRECTORY_NAME=基金会简介&amp;SUNCATALOGUE_NAME=')">基金会简介</a>&nbsp; &nbsp; &nbsp; 
-						<a onclick="openPage('<%=basePath %>newsData.do?CATALOG_NAME=远元基金会&amp;SUBDIRECTORY_NAME=救助申请&amp;SUNCATALOGUE_NAME=')">救助申请</a>&nbsp; &nbsp; &nbsp; 
-						<a onclick="openPage('<%=basePath %>newsData.do?CATALOG_NAME=远元基金会&amp;SUBDIRECTORY_NAME=新闻中心&amp;SUNCATALOGUE_NAME=')">新闻中心</a>&nbsp; &nbsp; &nbsp; 
-					</span>
-			  </div>
-			  <div class="menuxiala" id="menuxiala6" style="width: 280px;" onmouseout ="suboutMenu('menuxiala6');">
-					<span id="xiala6" style="padding-left:5px;" onmousemove="submoveMenu('aid6','menuxiala6')" >
-					    <a onclick="openPage('<%=basePath %>newsData.do?CATALOG_NAME=联系我们&amp;SUBDIRECTORY_NAME=客户服务&amp;SUNCATALOGUE_NAME=')">客户服务</a>&nbsp; &nbsp; &nbsp; 
-						<a onclick="openPage('<%=basePath %>newsData.do?CATALOG_NAME=联系我们&amp;SUBDIRECTORY_NAME=人才招聘&amp;SUNCATALOGUE_NAME=')">人才招聘</a>&nbsp; &nbsp; &nbsp; 
-						<a onclick="openPage('<%=basePath %>newsData.do?CATALOG_NAME=联系我们&amp;SUBDIRECTORY_NAME=客户留言&amp;SUNCATALOGUE_NAME=')">客户留言</a>&nbsp; &nbsp; &nbsp; 
-					</span>
-			  </div>
+		 
 			<!--导航条 结束-->
 		</div>
 	</div>
@@ -525,14 +470,39 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 <script type="text/javascript">
 	jQuery(function($){
-		//alert($(window).width()*0.95);
-		//$(".banner_guide").width($(window).width()*0.9);
-		  $('.vmcarousel-centered-infitine').vmcarousel({
-			 centered: true,
-			 start_item: 1,
-			 autoplay: true,
-			 infinite: true
-		  });
+		
+		$.ajax({
+			type: "POST",
+			url: '<%=basePath %>getshowMenuData.do?tm='+new Date().getTime(),
+			dataType:'json',
+			success: function(res){
+				var data=res["dictionList"];
+				var str="";
+				var wid=790;
+				for(var i=0;i<data.length;i++){
+					k=i+1;
+					str+="<li><a id=\"aid"+k+"\" class=\"subpage\" onmousemove=\"moveMenu('aid"+k+"','xiala"+k+"','menuxiala"+k+"');\" " +
+							" onmouseout=\"outMenu('xiala"+k+"');\" href=\"\"  >"+data[i].name+"</a></li>";
+				  var sublist=data[i].subDict;
+				  var subTitle=""; 
+				  var subDIV="<div class=\"menuxiala\" id=\"menuxiala"+k+"\" style=\"width: "+wid+"px;\" onmouseout=\"suboutMenu('menuxiala"+k+"');\">"+
+						"<span id=\"xiala"+k+"\" style=\"padding-left:14px;\" onmousemove=\"submoveMenu('aid"+k+"','menuxiala"+k+"')\" >";
+					 
+				  for(var j=0;j<sublist.length;j++){
+					 
+					  subTitle+="<a onclick=\"openPage('<%=basePath %>newsData.do?CATALOG_NAME="+data[i].name+"&amp;SUBDIRECTORY_NAME="+sublist[j].name+"&amp;SUNCATALOGUE_NAME=')\">"+sublist[j].name+"</a>&nbsp;&nbsp; &nbsp;   ";
+				  }
+				  wid=wid-96;  
+				  $("#logo").append(subDIV+subTitle+"</span></div>"); 
+				}
+		
+			 
+				$(".navigationlist").append(str);
+				
+		 
+			}
+		});
+		
 	   });
 	
 </script>

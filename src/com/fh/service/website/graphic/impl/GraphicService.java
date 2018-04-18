@@ -64,6 +64,12 @@ public class GraphicService implements GraphicManager{
 		return (List<PageData>)dao.findForList("GraphicMapper.listAll", pd);
 	}
 	
+	
+	 
+	@SuppressWarnings("unchecked")
+	public List<PageData> listAll(Page page)throws Exception{
+		return (List<PageData>)dao.findForList("GraphicMapper.listAll", page);
+		}
 	/**通过id获取数据
 	 * @param pd
 	 * @throws Exception

@@ -85,7 +85,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<img src="<%=basePath %>static/resource/images1/LOGO.png" height="58"  title="远元集团" alt="远元集团" style="top:30px;margin-top: 20px; " />
 				</a>
 			</div>
-			<!--网站Logo 结束-->
+			<!--网站Logo  结束-->
 			<!--导航条 开始-->
 			<div id="navigation">
 				<ul class="navigationlist">
@@ -104,16 +104,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div id="banner_main">
 		<!--幻灯片 开始-->
 		<div id="banner" >
-			<ul class="bannerlist">
-				<li> 
-					<a href="javascript:void(0)" ><img src="<%=basePath %>static/resource/images1/y-1.jpg"  style="width:100%;height:100%;"  /></a>
-				</li>
-				<li>
-					<a href="javascript:void(0)" ><img src="<%=basePath %>static/resource/images1/y-2.jpg"  style="width:100%;height:100%;" /></a>
-				</li>
-				<li>
-					<a href="javascript:void(0)" ><img src="<%=basePath %>static/resource/images1/y-3.jpg"  style="width:100%;height:100%;"  /></a>
-				</li>
+			<ul class="bannerlist" id="headulid">
+			 
 			</ul>
 			
 			<div id="bgnextid"  > 
@@ -130,54 +122,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   	 
 		<!--幻灯片 结束-->
 	</div>
-	<script>
-		if ($(".bannerlist li").length > 0) {
-	 $('#banner_main').slide({
-			titCell: '.hd ul',
-			mainCell: '#banner ul',
-			autoPlay: true,
-			autoPage: true,
-			delayTime: 500,
-			effect: 'left',
-			prevCell:'#bgnextid',
-			nextCell:'#bgfrontid',
-			//vis:"auto",
-			trigger:"click"
-		}); 
-		$(window).resize(function () {
-			CenterBanner();
-		});
-		$(document).ready(function (e) {
-			CenterBanner();
-		});
-	} else {
-		$("#banner_main").hide();
-	}
-	
-	function CenterBanner() {
-		var imgWidth = parseInt($(".bannerlist li img:first").width());
-		if (imgWidth <= 0)
-			return;
-		var winWidth = parseInt($(window).width());
-		var offset = parseInt((winWidth - imgWidth) / 2);
 	 
-	} 
- 
-	</script>
  <div style="  clear: both;height: 20px;"></div>
 	<!--主体内容 开始-->
 	 <div class="mainContent">    
 		<div id="aboutme" style="float:left;width: 750px;height: 290px;border:1px solid #ddd;"> 
 		 	<div style="float: left;"  >
-			 <img alt="下一图"  onclick="frontimg();" width="278" height="290" src="<%=basePath %>static/resource/images1/y-5.jpg"> 
+				 <img alt="下一图"  onclick="frontimg();" id="aboutimgId" width="278" height="290" src="<%=basePath %>static/resource/images1/y-5.jpg"> 
 			 </div>
-			 	<div style="float: right;width:445px;"  >
+			 	<div style="float: right;width:445px;"  > 
 			 			<table border="0" style="width: 96%;height: 100%;margin: 10px 5px 5px 10px;" >
 			 				<tr>
 			 					<td style="height: 30px;"><h1 style="height:60;font-weight: bold;" >关于我们</h1> </td>
 			 				</tr>
 			 				<tr>
-			 					<td style="height: 200px;word-wrap:break-word;word-break:break-all;line-height: 36px;font-size: 16px;cursor: pointer; " 
+			 					<td  id="aboutUSContentID" style="height: 200px;word-wrap:break-word;word-break:break-all;line-height: 36px;font-size: 16px;cursor: pointer; " 
 			 					onclick="openPage('<%=basePath %>newsData.do?CATALOG_NAME=关于远元&amp;SUBDIRECTORY_NAME=集团简介&amp;SUNCATALOGUE_NAME=')">  
 			 						        &nbsp; &nbsp;陕西郑远元专业修脚保健服务集团有限公司（简称远元集团），是由陕西省工商局核准成立的全国知名连锁性集团公司，
 			 						        并由国家工商行政管理总局商标局批准“郑远元”为注册商标，2014年获得陕西省著名商标。
@@ -195,7 +154,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div  style="float: right;width:445px;height: 290px;border:1px solid #ddd;">
 	 		 <ul id="tab" >
 			        <li class="current" >新闻资讯</li>
-			        <li style=" margin-bottom: 0px;">行业动态</li>
+			        <li style=" margin-bottom: 0px;">市场动态</li>
 			        <li style=" margin-bottom: 0px;">店面分布</li>
 			      	<li style=" margin-bottom: 0px;">在线视频</li>
 			    </ul>
@@ -240,12 +199,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		           					<td  rowspan="2" style="width: 130px;">
 		           					 <img id="media_img_id1" alt="下一图"  width="113px"  height="76px"  src=""> 
 		           					</td>
-		           					<td height="30" style="font-size: 14px;font-weight: bold;cursor: pointer; " id="media_title_id1" onclick="openPage('<%=basePath %>newsData.do?CATALOG_NAME=新闻中心&amp;SUBDIRECTORY_NAME=行业动态&amp;SUNCATALOGUE_NAME=')">
+		           					<td height="30" style="font-size: 14px;font-weight: bold;cursor: pointer; " id="media_title_id1" onclick="openPage('<%=basePath %>newsData.do?CATALOG_NAME=新闻中心&amp;SUBDIRECTORY_NAME=市场动态&amp;SUNCATALOGUE_NAME=')">
 		           						
 		           					</td>
 		           				</tr>
 		           				<tr>
-		           					<td height="60" style="font-size: 10px;cursor: pointer;" id="media_brief_id1" onclick="openPage('<%=basePath %>newsData.do?CATALOG_NAME=新闻中心&amp;SUBDIRECTORY_NAME=行业动态&amp;SUNCATALOGUE_NAME=')">
+		           					<td height="60" style="font-size: 10px;cursor: pointer;" id="media_brief_id1" onclick="openPage('<%=basePath %>newsData.do?CATALOG_NAME=新闻中心&amp;SUBDIRECTORY_NAME=市场动态&amp;SUNCATALOGUE_NAME=')">
 		           						
 		           					</td>
 		           				</tr>
@@ -302,45 +261,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</div>
     <div style="clear: both;height:15px;"></div>
      <div  style="width: 1440px;height:180px; margin:0 auto;">
-		<ul class="vmcarousel-centered-infitine vmc-centered">
-			<li  >
-				<a href="#"  target="_blank">
-					<img class="imgtitle" src="<%=basePath %>static/resource/images1/f-1.jpg" width="250" height="180" /></a>
-				   <div class="centerImg" >
-          				<img  class="shake" src="<%=basePath %>static/resource/images1/img1.png" width="90" height="90">
-       		 		</div>
-			</li>
-			<li>
-				<a href="#" target="_blank"><img class="imgtitle" src="<%=basePath %>static/resource/images1/f-2.jpg" width="250" height="180" /></a>
-			 		<div class="centerImg" >
-          				<img class="shake" src="<%=basePath %>static/resource/images1/img2.png" width="90" height="90">
-       		 		</div>
-			</li>
-			<li><a href="#" target="_blank"><img  class="imgtitle" src="<%=basePath %>static/resource/images1/f-3.jpg" width="250" height="180" /></a>
-					<div class="centerImg" >
-          				<img class="shake" src="<%=basePath %>static/resource/images1/img3.png" width="90" height="90">
-       		 		</div>
-			
-			</li>
-			<li>
-				<a href="#" target="_blank"><img class="imgtitle" src="<%=basePath %>static/resource/images1/f-4.jpg" width="250" height="180" /></a>
-				<div class="centerImg" >
-         				<img class="shake" src="<%=basePath %>static/resource/images1/img4.png" width="90" height="90">
-      		 		</div>
-			</li>
-			<li>
-				   <a href="#" target="_blank"><img  class="imgtitle" src="<%=basePath %>static/resource/images1/f-5.jpg" width="250" height="180" /></a>
-					<div class="centerImg" >
-          				<img class="shake" src="<%=basePath %>static/resource/images1/img5.png" width="90" height="90">
-       		 		</div>
-			</li>
-            <li>
-            	<a href="#" target="_blank"><img class="imgtitle" src="<%=basePath %>static/resource/images1/f-6.jpg" width="250" height="180" /></a>
-          		  <div class="centerImg" >
-          				<img class="shake" src="<%=basePath %>static/resource/images1/img6.png" width="90" height="90">
-       		 		</div>
-            
-            </li>
+		<ul id="bottomImgUIID" class="vmcarousel-centered-infitine vmc-centered">
+			 
 		</ul>
     </div>
     
@@ -400,10 +322,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		            		<tr>
 		            		<td>号集   团</td>
 		            		</tr>
-		            		
-		            	
-		            	 
-		            	</table>
+ 		            	</table>
 		            </div>
 		            <div class="code c_first">
 		                  <table style="text-align:right;">
@@ -468,18 +387,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	 <script src="<%=basePath %>static/resource/assert/js/bootstrap.min.js"></script>
 	 <script src="<%=basePath %>static/resource/assert/js/jquery.vm-carousel.js"></script>
 	 <script src="<%=basePath %>static/resource/assert/js/scolltop.js"></script>
-
-	<script type="text/javascript">
-		jQuery(function($){
-			  $('.vmcarousel-centered-infitine').vmcarousel({
-				 centered: true,
-				 start_item: 1,
-				 autoplay: true,
-				 infinite: true
-			  });
-		   });
-		
-	</script>
+ 
  
 </body>
 </html>

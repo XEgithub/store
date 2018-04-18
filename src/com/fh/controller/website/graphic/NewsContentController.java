@@ -15,6 +15,8 @@ import javax.annotation.Resource;
 
 
 
+
+
 import net.sf.json.JSONArray;
 
 import org.apache.shiro.session.Session;
@@ -26,9 +28,11 @@ import org.springframework.web.servlet.ModelAndView;
 import com.alibaba.fastjson.JSON;
 import com.fh.controller.base.BaseController;
 import com.fh.entity.Page;
+import com.fh.entity.homepage.HomePage;
 import com.fh.entity.system.Dictionaries;
 import com.fh.service.system.dictionaries.DictionariesManager;
 import com.fh.service.website.graphic.GraphicManager;
+import com.fh.service.website.homepage.HomePageManager;
 import com.fh.service.website.messages.MessagesManager;
 import com.fh.service.website.statistics.StatisticsManager;
 import com.fh.service.website.storeinfo.StoreInfoManager;
@@ -54,17 +58,32 @@ public class NewsContentController extends BaseController {
 	
 	@Resource(name="storeinfoService")
 	private StoreInfoManager storeinfoService; 
+	
+	@Resource(name = "homepageService")
+	private HomePageManager homepageService;
 
 	@RequestMapping(value = "/getshowMenuData")
 	@ResponseBody
-	public String getshowMenuData() throws Exception{
+	public Map<String, List<?>> getshowMenuData() throws Exception{
 		
-		//JSONArray arr = JSONArray.fromObject();
 		List<Dictionaries> dataList=dictionariesService.listAllDict("0");
+		PageData pd = new PageData();
+		List<HomePage> homePages=	 homepageService.listHomePage(pd);
+		Map<String, List<?>> dataMap=new HashMap<String, List<?>>();
+		dataMap.put("dictionList", dataList);
+		dataMap.put("homepgeList", homePages);
+		String GRAPHIC_ID = pd.getString("GRAPHIC_ID");
+	 
+		PageData graphicPD= new PageData();
+	 
 		
-		JSONArray arr = JSONArray.fromObject(dataList);
+		graphicPD.put("CATALOG_NAME", "关于远元");
+		graphicPD.put("SUBDIRECTORY_NAME", "集团简介");
+		graphicPD.put("SUNCATALOGUE_NAME", ""); 		
+		List<PageData> aboutList = graphicService.listAll(graphicPD);
+		dataMap.put("aboutList", aboutList);
 		
-		return arr.toString();
+		return dataMap;
 		
 		
 	}
@@ -95,7 +114,8 @@ public class NewsContentController extends BaseController {
 		List<PageData> varList = graphicService.list(page);
 
 		PageData paData = new PageData();
-		if (null != varList && varList.size() > 1) {
+		List<PageData> cuntlist = graphicService.listAll(page);
+		if (null != varList && cuntlist.size() >1) {
 
 			for (PageData pageData : varList) {
 				pageData.put("CONTENT", "");

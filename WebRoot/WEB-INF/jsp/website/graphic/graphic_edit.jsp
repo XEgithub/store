@@ -17,16 +17,18 @@
 	<script type="text/javascript" src="static/ace/js/jquery.js"></script>
 	<!-- 日期框 -->
 	<link rel="stylesheet" href="static/ace/css/datepicker.css" />
-
-		<!-- 上传插件 -->
+	<!-- 百度富文本编辑框-->
+ 	<script src="static/ace/js/jquery.js"></script>
+	<!-- 上传插件 -->
 	<link href="plugins/uploadify/uploadify.css" rel="stylesheet" type="text/css">
 	<script type="text/javascript" src="plugins/uploadify/swfobject.js"></script>
 	<script type="text/javascript" src="plugins/uploadify/jquery.uploadify.v2.1.4.min.js"></script>
-		<!-- 编辑框-->
+	
+	<!-- 编辑框-->
 	<link href="plugins/ueditor/themes/default/css/ueditor.css" rel="stylesheet" type="text/css">
 	<style type="text/css">
-/* 		.edui-default  .edui-for-button_leipi .edui-icon {background-position: -401px -40px;} */  
-/* 		.edui-default  .edui-for-button_template .edui-icon {background-position: -339px -40px;} */
+  		.edui-default  .edui-for-button_leipi .edui-icon {background-position: -401px -40px;}    
+  		.edui-default  .edui-for-button_template .edui-icon {background-position: -339px -40px;}  
 	</style>
 	<script type="text/javascript" charset="utf-8">window.UMEDITOR_HOME_URL = "<%=path%>/plugins/ueditor/";</script>
 	<script type="text/javascript" charset="utf-8" src="plugins/ueditor/ueditor.config.js"></script>
@@ -588,9 +590,8 @@
 				'folder'	:	"<%=basePath%>uploadFiles/uploadFile",//上传文件存放的路径,请保持与uploadFile.jsp中PATH的值相同
 				'queueId'	:	"fileQueue",
 				'queueSizeLimit'	:	1,//限制上传文件的数量
-				 'fileExt'	:	"*.jpg,*.png,*.gif",
-				//'fileDesc'	:	"RAR *.rar",//限制文件类型
-				'fileExt'     : '*.*;*.*;*.*',
+				'fileExt'	:	"*.jpg,*.png,*.gif",
+			/* 	'fileExt'     : '*.*;*.*;*.*', */
 				'fileDesc'    : 'Please choose(.*, .*, .*)',
 				'auto'		:	false,
 				'multi'		:	false,//是否允许多文件上传
